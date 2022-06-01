@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-for i in range(97, 123):
-    if i == 101 or i == 113:
-        continue
-    print("{}".format(chr(i)), end='')
+for loop in list(map(chr, range(97, 123))):
+    if loop != 'e' and loop != 'q':
+        print("{}".format(loop), end="")
