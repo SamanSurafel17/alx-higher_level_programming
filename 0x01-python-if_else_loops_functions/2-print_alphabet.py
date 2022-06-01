@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for i in range(97, 123):
-    print("{}".format(chr(i)), end='')
+for loop in list(map(chr, range(97, 123))):
+    print("{}".format(loop), end="")
