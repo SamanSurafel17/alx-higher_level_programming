@@ -1,29 +1,21 @@
 #!/usr/bin/python3
-
 if __name__ == "__main__":
     import sys
     from calculator_1 import add, sub, mul, div
-
-    def getop(a, op, b):
-        if op == "+":
-            return (add(a, b))
-        if op == "-":
-            return (sub(a, b))
-        if op == "*":
-            return (mul(a, b))
-        if op == "/":
-            return (div(a, b))
-
-    nb = len(sys.argv)
-    arg = sys.argv
-    signe = "-+*/"
-    if nb == 1:
+    if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
-    elif arg[2] not in signe:
+    a = int(sys.argv[1])
+    b = int(sys.argv[3])
+    op = sys.argv[2]
+    if op == "+":
+        print("{} + {} = {}".format(a, b, add(a, b)))
+    elif op == "-":
+        print("{} - {} = {}".format(a, b, sub(a, b)))
+    elif op == "*":
+        print("{} * {} = {}".format(a, b, mul(a, b)))
+    elif op == "/":
+        print("{} / {} = {}".format(a, b, div(a, b)))
+    else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
-    else:
-        r = getop(int(arg[1]), arg[2], int(arg[3]))
-        print("{} {} {} = {}".format(arg[1], arg[2], arg[3], r))
-        exit(0)
