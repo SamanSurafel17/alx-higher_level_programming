@@ -1,1 +1,1 @@
-Python - import & modules
+python import and modules
