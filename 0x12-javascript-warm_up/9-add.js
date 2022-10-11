@@ -1,11 +1,6 @@
 #!/usr/bin/node
-
-if (parseInt(process.argv[2])) {
-  if (parseInt(process.argv[3])) {
-    console.log(parseInt(process.argv[2]) + parseInt(process.argv[3]));
-  } else {
-    console.log('NaN');
-  }
-} else {
-  console.log('NaN');
+function add (a, b) {
+  return a + b;
 }
+
+console.log(add(Number(process.argv[2]), Number(process.argv[3])));

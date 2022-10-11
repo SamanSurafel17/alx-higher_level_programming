@@ -1,11 +1,9 @@
 #!/usr/bin/node
-
-if (process.argv.length === 2 || process.argv.length === 3) {
+if (process.argv.length <= 3) {
   console.log(0);
 } else {
-// console.log(
-  let array = process.argv.filter(ele => parseInt(ele));
-  array = array.filter(ele => ele < Math.max(...array));
-  console.log(Math.max(...array));
-// )
+  const args = process.argv.map(Number)
+    .slice(2, process.argv.length)
+    .sort((a, b) => a - b);
+  console.log(args[args.length - 2]);
 }
