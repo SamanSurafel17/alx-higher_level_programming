@@ -1,12 +1,13 @@
 #!/usr/bin/node
-
-const dic1 = require('./101-data').dict;
-const dic2 = {};
-for (const key in dic1) {
-  if (dic2[dic1[key]] === undefined) {
-    dic2[dic1[key]] = [key];
-  } else {
-    dic2[dic1[key]].push(key);
-  }
+const dict = require('./101-data').dict;
+const dKeys = Object.keys(dict);
+const values = Object.values(dict);
+let matched;
+const result = {};
+// loop over the values
+for (let i = 0; i < values.length; i++) {
+  result[JSON.stringify(values[i])] = [];
+  matched = dKeys.filter(key => dict[key] === values[i]);
+  matched.forEach(item => result[JSON.stringify(values[i])].push(item));
 }
-console.log(dic2);
+console.log(result);
